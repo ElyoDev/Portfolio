@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElyoDev | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="cursor"></div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <nav class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="#home" class="link">Home</a></li>
+            <li><a href="#about" class="link">About</a></li>
+            <li><a href="#projects" class="link">Projects</a></li>
+            <li><a href="#skills" class="link">Skills</a></li>
+            <li><a href="blog.html" class="link">Blog</a></li>
+        </ul>
+    </nav>
+
+    <header>
+
+        <img class="logo" src="logo.png">
+
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="#home" class="link">Home</a></li>
+                <li><a href="#about" class="link">About</a></li>
+                <li><a href="#projects" class="link">Projects</a></li>
+                <li><a href="#skills" class="link">Skills</a></li>
+                <li><a href="blog.html" class="link">Blog</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-button" id="menuButton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>ElyoDev</h1>
+        <p>
+            Developpeur Web
+        </p>
+        <a href="#projects" class="btn-papier button">Projets</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            Je suis un développeur web passionné par la création de petits projets intuitifs. Mon objectif est de rendre chaque projet toujours meilleur.
+        </p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Mes projets</h2>
+        <div class="projects-grid">
+
+            <div class="project-card"
+                 onclick="openFullscreen('Mon portfolio', 'Un portfolio pour me présenter', 'portfolio.png', this)"
+                 data-url="#"
+                 data-github="https://github.com">
+                <img src="portfolio.png" alt="Portfolio">
+                <div class="project-info">
+                    <h3>Mon portfolio</h3>
+                    <p>Un portfolio pour me présenter.</p>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 onclick="openFullscreen('', 'Rien ici pour le moment', 'Vide.png', this)"
+                 data-url="#"
+                 data-github="#">
+                <img src="Vide.png" alt="Vide">
+                <div class="project-info">
+                    <h3>Vide</h3>
+                    <p>Rien ici pour le moment</p>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 onclick="openFullscreen('', 'Rien ici pour le moment', 'Vide.png', this)"
+                 data-url="#"
+                 data-github="#">
+                <img src="Vide.png" alt="Vide">
+                <div class="project-info">
+                    <h3>Vide</h3>
+                    <p>Rien ici pour le moment</p>
+                </div>
+            </div>
+    </section>
+
+
+    <section id="skills" class="skills">
+        <h2>Skills*</h2>
+        <div class="skills-container">
+
+            <div class="skill button">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML5</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS3</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="skill button"> 
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-node-js"></i>
+                <span>Node.js</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-react"></i>
+                <span>React</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-docker"></i>
+                <span>Docker</span>
+            </div>
+
+             <div class="skill button">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-linux"></i>
+                <span>Linux</span>
+            </div>
+
+            <div class="skill button">
+                <i class="fa-brands fa-figma"></i>
+                <span>Figma</span>
+            </div>
+            
+        </div>
+    </section>
+
+    <div class="project-fullscreen" id="projectFullscreen">
+        <button class="close-fullscreen" onclick="closeFullscreen()">&times;</button>
+        <h3 id="fullscreenTitle">Titre du projet</h3>
+        <img id="fullscreenImage" src="" alt="Projet en plein écran">
+        <p id="fullscreenDescription">Description du projet.</p>
+        <div class="project-links">
+            <a href="#" class="btn-papier" id="fullscreenLink" target="_blank">
+                <i class="fas fa-external-link-alt"></i>Voir
+            </a>
+            <a href="#" class="btn-papier" id="fullscreenGithub" target="_blank">
+                <i class="fab fa-github"></i>Source
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" class="link"><i class="fab fa-github"></i></a>
+            <a href="#" class="link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="link"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 ElyoDev. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
